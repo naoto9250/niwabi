@@ -1,0 +1,83 @@
+<div class="row form-group">
+    <div class="col-sm-5">お名前<p>Name<span>*</span></p></div>
+    <div class="col-sm-7">[text* your-name]</div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-5">メールアドレス<p>E-mail address<span>*</span></p></div>
+    <div class="col-sm-7">[email* your-email]
+        <p>* 送受信のエラーを未然に防ぐため、携帯電話のメールアドレスではなく、パソコンで使用出来るメールアドレスをご利用下さい（Gmail、Yahoo、Hotmail、その他各社で設定のもの）。</p>
+    </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-5">確認用アドレス<p>E-mail address for verification<span>*</span></p></div>
+    <div class="col-sm-7">[email* verification-email]</div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-5">電話番号<p>Tel<span>*</span></p></div>
+    <div class="col-sm-7">[tel* your-tel]</div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-5">性別<p>Sex<span>*</span></p></div>
+    <div class="col-sm-7">[checkbox* your-sex use_div_element exclusive "男性" "女性"]</div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-5">ご宿泊は初めてですか？<p>Repeat<span>*</span></p></div>
+    <div class="col-sm-7">[checkbox* repeat use_div_element exclusive "初めて" "2回目以上"]</div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-5">チェックイン日<p>Check in date<span>*</span></p></div>
+    <div class="col-sm-7">[date* check-in-date]
+        <p>* ご予約は３ヶ月先まで承っています。</p>
+    </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-5">チェックイン時間<p>Check in time<span>*</span></p></div>
+    <div class="col-sm-7">[select* check-in-time include_blank "9:00" "10:00" "11:00" "12:00" "13:00" "14:00" "15:00" "16:00" "17:00" "18:00" "19:00" "20:00" "21:00" "22:00" "23:00"]
+        <p>* チェックイン時間は23時までとなっております。
+            * 代表者のみのチェックインは承っておりません。
+            皆様23時までにチェックインにお越しください。</p></div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-5">チェックアウト日<p>Check out date<span>*</span></p></div>
+    <div class="col-sm-7">[date* check-out-date]</div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-5">宿泊人数<p>Number of people<span>*</span></p></div>
+    <div class="col-sm-7">
+        <p>男性 [select men-num id:men-num include_blank "1" "2" "3" "4"] 名</p>
+        <p>女性 [select women-num id:women-num include_blank "1" "2" "3" "4"] 名</p>
+        <p>合計 [select* poeple-num id:poeple-num include_blank "1" "2" "3" "4"] 名</p>
+        <span id="total-error" class="error_m"></span>
+        <p>* ご予約は最大4名様までとさせていただいております。
+            予めご了承ください。</p>
+    </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-5">希望部屋タイプ<p>Room type<span>*</span></p></div>
+    <div class="col-sm-7">[checkbox* room-type1 use_label_element exclusive "ドミトリー" "個室"]</div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-5">第２希望部屋タイプ<p>Room type<span>*</span></p></div>
+    <div class="col-sm-7">[checkbox* room-type2 use_label_element exclusive "ドミトリー" "個室"]</div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-5">その他ご質問・ご連絡など<p>Comments</p></div>
+    <div class="col-sm-7">[textarea comments]</div>
+</div>
+
+<div class="row form-group-bottom">
+    <div class="col-sm-6">[acceptance acceptance-check optional]上記の内容で送信してもよろしいでしょうか？ [/acceptance]</div>
+    <div class="col-sm-6 submit-btn">[submit id:submit-btn "送信する"]</div>
+</div>
