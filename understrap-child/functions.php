@@ -18,9 +18,11 @@ function theme_enqueue_styles()
     // Get the theme data
     $the_theme = wp_get_theme();
     wp_enqueue_style('child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get('Version'));
+    wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/css/main.css', array(), $today = date("Ymd") );
     wp_enqueue_script('jquery');
     wp_enqueue_script('popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
     wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get('Version'), true);
+    wp_enqueue_script('commmon-script', get_stylesheet_directory_uri() . '/js/main.js', array(), $today = date("Ymd"), true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
@@ -31,33 +33,6 @@ function add_child_theme_textdomain()
     load_child_theme_textdomain('understrap-child', get_stylesheet_directory() . '/languages');
 }
 add_action('after_setup_theme', 'add_child_theme_textdomain');
-
-/* main.css追加
----------------------------------------------------------- */
-function register_stylesheet()
-{
-    wp_register_style('main', get_stylesheet_directory_uri() . '/css/main.css?v=20200625');
-}
-function add_stylesheet()
-{
-    register_stylesheet();
-    wp_enqueue_style('main', '', array(), '1.0', false);
-}
-add_action('wp_enqueue_scripts', 'add_stylesheet');
-
-/* main.js追加
----------------------------------------------------------- */
-function my_scripts_method()
-{
-    wp_enqueue_script(
-        'commmon-script',
-        get_stylesheet_directory_uri() . '/js/main.js',
-        array('jquery'),
-        '1.0',
-        true
-    );
-}
-add_action('wp_enqueue_scripts', 'my_scripts_method');
 
 /* メニュー　サブタイトル追加
 ---------------------------------------------------------- */

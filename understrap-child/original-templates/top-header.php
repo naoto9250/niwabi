@@ -6,9 +6,7 @@
  */
 ?>
 
-<div class="top-herder">
-
-	<img src="<?php echo get_the_topimage_url(); ?>" alt="" class="main-image">
+<div class="top-herder" style="background-image: url(<?php echo get_the_topimage_url(); ?>);">
 
 	<div class="top-logo">
 		<a href="<?php echo home_url() ?>">
